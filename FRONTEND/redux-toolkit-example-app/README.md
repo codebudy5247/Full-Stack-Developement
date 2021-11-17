@@ -2,7 +2,8 @@ API
 
 - https://rapid-api5247.herokuapp.com/api/contacts
 
-- npx create-react-app my-app --template redux
+## Create react app
+- npx create-react-app redux-toolkit-example-app --template redux
 
 Add Style
 
@@ -56,7 +57,23 @@ Redux Toolkit provides createSlice() function that will auto-generate the action
 ## Create Redux Store
 - The Redux Toolkit configureStore() function automatically:enable the Redux DevTools Extension.sets up the thunk middleware by default, so you can immediately write thunks without more configuration.In the previous part, we exported contact reducer from contactSlice. Let’s import it, and pass it to configureStore():
 
+## Provide State to React Pages
+```code
+src/index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+...
+import { Provider } from 'react-redux';
+import store from './store';
 
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+```
 
 
 

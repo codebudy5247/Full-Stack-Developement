@@ -19,10 +19,10 @@ export const retrieveContacts = createAsyncThunk(
   "contacts/retrieve",
   async () => {
     const res = await ContactData.getAll();
-    return res.data;
+    console.log(res.data.contacts);
+    return res.data.contacts;
   }
 );
-
 export const updateContact = createAsyncThunk(
   "contacts/update",
   async ({ id, data }) => {
@@ -67,3 +67,5 @@ const contactSlice = createSlice({
 
 const { reducer } = contactSlice;
 export default reducer;
+
+// export default contactSlice.reducer
